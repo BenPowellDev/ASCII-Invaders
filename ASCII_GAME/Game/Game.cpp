@@ -1,5 +1,7 @@
 ﻿#include "Game.h"
+#include <stdio.h>
 #include <windows.h>
+#include <mmsystem.h>
 #include <iostream>
 #include <conio.h>
 #include <list>
@@ -131,7 +133,7 @@ void Game::InitialiseMainMenu()
 				} break;
 				case 1:
 				{
-					std::cout << "Options" << std::endl;
+					std::cout << "Still in development";
 					Sleep(1000);
 				}break;
 				case 2:

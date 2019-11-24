@@ -7,7 +7,7 @@ class ASCIIRenderer;
 class Game;
 
 const int NUM_INVADERS_PER_ROW = 2;
-const int NUM_ROWS_OF_INVADERS = 8;
+const int NUM_ROWS_OF_INVADERS = 4;
 const int TOP_OF_PLAY_SCREEN = 15;
 
 class EnemyArmy

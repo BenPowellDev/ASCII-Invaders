@@ -29,8 +29,6 @@ private:
 	void Update();
 	void Render();
 	void UpdateScoreDisplay();
-	void UpdatePlayerLives();
-	void PlayerLives();
 
 	void InitialiseMainMenu();
 	void InitialiseGame();

@@ -35,9 +35,6 @@
     <ClCompile Include="Game\GameObjects\ScoreDisplay.cpp">
       <Filter>Game\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Ben\Downloads\menu.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">

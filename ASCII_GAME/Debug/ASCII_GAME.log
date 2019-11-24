@@ -1,9 +1,7 @@
 ﻿  Game.cpp
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(181): warning C4552: '-': result of expression not used
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(195): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(224): warning C4018: '<': signed/unsigned mismatch
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(229): warning C4018: '<': signed/unsigned mismatch
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(234): warning C4552: '-': result of expression not used
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(263): error C3867: 'Game::InitialiseMainMenu': non-standard syntax; use '&' to create a pointer to member
-e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(323): warning C4018: '<': signed/unsigned mismatch
+e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(157): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(274): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(298): warning C4018: '<': signed/unsigned mismatch
+e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(303): warning C4018: '<': signed/unsigned mismatch
+e:\coursework\programming for games\ascii invaders\ascii_game\game\game.cpp(397): warning C4018: '<': signed/unsigned mismatch
+  ASCII_GAME.vcxproj -> E:\Coursework\Programming For Games\ASCII Invaders\Debug\ASCII_GAME.exe

@@ -138,7 +138,7 @@ void ScoreDisplay::Initialise(Vector2& position)
 {
 	AnimatedSprite::Initialise(&ScoreDigitSprite[0][0], Vector3(DIGIT_WIDTH, DIGIT_HEIGHT, NUM_DIGITS));
 
-	Vector2 startPosition(position.x - (AnimatedSprite::GetSize().x / 2), position.y - (AnimatedSprite::GetSize().y / 2));
+	Vector2 startPosition(position.x - (AnimatedSprite::GetSize().x - 215), position.y - (AnimatedSprite::GetSize().y / 2));
 	SetPosition(startPosition);
 
 	SetAnimationFrame(0);

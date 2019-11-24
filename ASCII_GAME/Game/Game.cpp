@@ -2,7 +2,8 @@
 #include <windows.h>
 #include <iostream>
 #include <conio.h>
-#include "menu.cpp"
+#include <list>
+#include <string>
 #include "../Core/Utils.h"
 #include "../Core/Renderer/ASCIIRenderer.h"
 
@@ -37,9 +38,10 @@ Game::~Game()
 
 void Game::Initialise()
 {
-	InitialiseRenderer();
 
 	InitialiseMainMenu();
+
+	InitialiseRenderer();
 
 	InitialiseGame();
 
@@ -57,16 +59,91 @@ void Game::InitialiseRenderer()
 
 void Game::InitialiseMainMenu()
 {
-	Menu menu;
-	int choice;
+	std::string Menu[3] = { "                                                     Start Game", "                                                      Options", "                                                        Exit" };
+	int pointer = 0;
 
-
-	choice = menu.Gmenu("Start", "Options", "Exit");
-	switch (choice)
+	while (true)
 	{
-	case 0: std::cout << "Game Started" << std::endl; break;
-	case 1: std::cout << "Options" << std::endl; break;
-	case 2: m_bExitApp = true;
+		system("cls");
+
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
+		std::cout << R"(
+                 _.u[[/;:,.         .odMMMMMM'                                                                         
+              .o888UU[[[/;:-.  .o@P^    MMM^                                                                           
+             oN88888UU[[[/;::-.        dP^      _____                        _____                     _               
+            dNMMNN888UU[[[/;:--.   .o@P^       / ____|                      |_   _|                   | |              
+           ,MMMMMMN888UU[[/;::-. o@^          | (___  _ __   __ _  ___ ___    | |  _ ____   ____ _  __| | ___ _ __ ___ 
+           NNMMMNN888UU[[[/~.o@P^              \___ \| '_ \ / _` |/ __/ _ \   | | | '_ \ \ / / _` |/ _` |/ _ \ '__/ __|
+           888888888UU[[[/o@^-..               ____) | |_) | (_| | (_|  __/  _| |_| | | \ V / (_| | (_| |  __/ |  \__ \
+          oI8888UU[[[/o@P^:--..               |_____/| .__/ \__,_|\___\___| |_____|_| |_|\_/ \__,_|\__,_|\___|_|  |___/
+       .@^  YUU[[[/o@^;::---..                       | |                                                               
+     oMP     ^/o@P^;:::---..                         |_|                                                               
+  .dMMM    .o@^ ^;::---...                                                                                             
+" dMMMMMMM@^`       `^^^^                                                                                              
+"YMMMUP^                                                                                                               
+)" << '\n';
+
+
+
+		for (int i = 0; i < 3; ++i)
+		{
+			if (i == pointer)
+			{
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+				std::cout << Menu[i] << std::endl;
+			}
+			else
+			{
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+				std::cout << Menu[i] << std::endl;
+			}
+		}
+
+		while (true)
+		{
+			if (GetAsyncKeyState(VK_UP) != 0)
+			{
+				pointer -= 1;
+				if (pointer == -1)
+				{
+					pointer = 0;
+				}
+				break;
+			}
+			else if (GetAsyncKeyState(VK_DOWN) != 0)
+			{
+				pointer += 1;
+				if (pointer == 3)
+				{
+					pointer = 0;
+				}
+				break;
+			}
+			else if (GetAsyncKeyState(VK_RETURN) != 0)
+			{
+				switch (pointer)
+				{
+				case 0:
+				{
+					std::cout << "Game Starting..." << std::endl;
+					Sleep(1000);
+					return;
+				} break;
+				case 1:
+				{
+					std::cout << "Options" << std::endl;
+					Sleep(1000);
+				}break;
+				case 2:
+				{
+					m_bExitApp = true;
+					return;
+				}break;
+				}
+			}
+		}
+
+		Sleep(150);
 	}
 }
 
@@ -85,6 +162,8 @@ void Game::InitialiseGame()
 	{
 		m_ScoreDigit[i].Initialise(Vector2(7 + (i * 10), 7));
 	}
+
+
 }
 
 void Game::InitialiseEndScreens()
@@ -178,7 +257,7 @@ void Game::UpdateGame()
 
 	if (m_EnemyArmy.Collides(m_PlayerShip))
 	{
-		m_Lives - 1;
+		(m_Lives - 1);
 	}
 
 	if (GetKeyState(VK_SPACE) < 0)
@@ -213,11 +292,6 @@ void Game::UpdatePlayerMissiles()
 
 }
 
-void Game::PlayerLives()
-{
-	m_Lives = 3;
-
-}
 
 void Game::UpdateEnemyMissiles()
 {
@@ -231,7 +305,7 @@ void Game::UpdateEnemyMissiles()
 		if (m_EnemyMissiles[i]->Active() && m_EnemyMissiles[i]->Collides(m_PlayerShip))
 		{
 			m_EnemyMissiles[i]->Explode();
-			m_Lives - 1;
+			(m_Lives - 1);
 		}
 		if (m_EnemyMissiles[i]->Active() && m_EnemyMissiles[i]->GetPosition().y > SCREEN_WIDTH)
 		{
@@ -246,11 +320,12 @@ void Game::CheckWinConditions()
 	{
 		m_GameState = E_GAME_STATE_WIN_GAME;
 	}
-	
-	if (m_Lives = 0)
+/*
+	if (m_Lives == 0)
 	{
 		m_GameState = E_GAME_STATE_LOSE_GAME;
 	}
+//*/
 }
 
 void Game::UpdateEndGameScreens()
@@ -260,7 +335,6 @@ void Game::UpdateEndGameScreens()
 	if (m_EndScreenCounter > 90)
 	{
 		m_EndScreenCounter = 0;
-		InitialiseMainMenu;
 	}
 }
 
@@ -348,6 +422,7 @@ void Game::AddEnemyMissile(Missile* pMissile)
 {
 	m_EnemyMissiles.push_back(pMissile);
 }
+
 
 void Game::UpdateScoreDisplay()
 {

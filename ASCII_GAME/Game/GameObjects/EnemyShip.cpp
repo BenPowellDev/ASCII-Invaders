@@ -168,7 +168,7 @@ void EnemyShip::Initialise(Vector2& position, int fireRate, int sprite, int scor
 
 	AnimatedSprite::Initialise(sprite == 0 ? &EnemyShipSprite0[0][0] : &EnemyShipSprite1[0][0], Vector3(ENEMY_SPRITE_WIDTH, ENEMY_SPRITE_HEIGHT, ENEMY_SPRITE_ANIMATION_FRAMES));
 
-	Vector2 startPosition(position.x - (AnimatedSprite::GetSize().x - 256), position.y - (AnimatedSprite::GetSize().y + 20));
+	Vector2 startPosition(position.x - (AnimatedSprite::GetSize().x - 256), position.y - (AnimatedSprite::GetSize().y - 8));
 	SetPosition(startPosition);
 
 	m_bInitialised = true;

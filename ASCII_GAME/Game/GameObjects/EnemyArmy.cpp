@@ -3,8 +3,8 @@
 
 float deltaTime = 1.0f / 30.0f;
 
-const int ENEMY_SPACING_X = 8;
-const int ENEMY_SPACING_Y = 10;
+const int ENEMY_SPACING_X = 10;
+const int ENEMY_SPACING_Y = 12;
 
 EnemyArmy::EnemyArmy()
 :m_UpdateTimer(0.0f)

@@ -25,12 +25,13 @@ private:
 	void MoveRight();
 	void MoveUp();
 	void MoveDown();
-	void Lives();
 
 	int m_LeftKey;
 	int m_RightKey;
 	int m_UpKey;
 	int m_DownKey;
+
+	int m_Lives;
 
 	bool LeftKeyPressed();
 	bool RightKeyPressed();

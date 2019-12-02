@@ -35,6 +35,9 @@
     <ClCompile Include="Game\GameObjects\ScoreDisplay.cpp">
       <Filter>Game\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Game\GameObjects\LifeDisplay.cpp">
+      <Filter>Game\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -96,5 +99,13 @@
     <ClInclude Include="Game\GameObjects\ScoreDisplay.h">
       <Filter>Game\GameObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Game\GameObjects\LifeDisplay.h">
+      <Filter>Game\GameObjects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
 </Project>

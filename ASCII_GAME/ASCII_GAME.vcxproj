@@ -74,6 +74,7 @@
     <ClCompile Include="Game\Game.cpp" />
     <ClCompile Include="Game\GameObjects\EnemyArmy.cpp" />
     <ClCompile Include="Game\GameObjects\EnemyShip.cpp" />
+    <ClCompile Include="Game\GameObjects\LifeDisplay.cpp" />
     <ClCompile Include="Game\GameObjects\Missile.cpp" />
     <ClCompile Include="Game\GameObjects\PlayerShip.cpp" />
     <ClCompile Include="Game\GameObjects\ScoreDisplay.cpp" />
@@ -90,10 +91,16 @@
     <ClInclude Include="Game\Game.h" />
     <ClInclude Include="Game\GameObjects\EnemyArmy.h" />
     <ClInclude Include="Game\GameObjects\EnemyShip.h" />
+    <ClInclude Include="Game\GameObjects\LifeDisplay.h" />
     <ClInclude Include="Game\GameObjects\Missile.h" />
     <ClInclude Include="Game\GameObjects\PlayerShip.h" />
     <ClInclude Include="Game\GameObjects\ScoreDisplay.h" />
     <ClInclude Include="Game\GameStates.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

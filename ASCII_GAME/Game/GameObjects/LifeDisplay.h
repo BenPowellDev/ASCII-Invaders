@@ -1,5 +1,5 @@
-#ifndef _ScoreDisplay_H_
-#define _ScoreDisplay_H_
+#ifndef _LifeDisplay_H_
+#define _LifeDisplay_H_
 
 #include "../../Core/Renderer/AnimatedSprite.h"
 
@@ -7,23 +7,19 @@ class ASCIIRenderer;
 
 extern const int SCREEN_WIDTH;
 
-const int NUM_DIGITS = 10;
-const int DIGIT_WIDTH = 8;
-const int DIGIT_HEIGHT = 10;
 
-
-class ScoreDisplay : public AnimatedSprite
+class LifeDisplay : public AnimatedSprite
 {
 public:
 
-	ScoreDisplay();
-	~ScoreDisplay();
+	LifeDisplay();
+	~LifeDisplay();
 
 	void Initialise(Vector2& position);
 	void Update(float deltaTime);
 	void Render(ASCIIRenderer* pRenderer);
 
-	void SetDigitValue(int value);
+	void SetLifeValue(int value);
 
 private:
 

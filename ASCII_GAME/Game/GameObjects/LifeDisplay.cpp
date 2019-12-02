@@ -1,7 +1,10 @@
-#include "ScoreDisplay.h"
+#include "LifeDisplay.h"
 #include "../../Core/Renderer/ConsoleColours.h"
+#include "EnemyArmy.h"
+#include "PlayerShip.h"
+#include "../Game/Game.h"
 
-CHAR_INFO ScoreDigitSprite[NUM_DIGITS][DIGIT_WIDTH * DIGIT_HEIGHT] =
+CHAR_INFO LifeDigitSprite[10][8 * 10] =
 {
 	{
 		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },
@@ -125,46 +128,47 @@ CHAR_INFO ScoreDigitSprite[NUM_DIGITS][DIGIT_WIDTH * DIGIT_HEIGHT] =
 	},
 };
 
-ScoreDisplay::ScoreDisplay()
+LifeDisplay::LifeDisplay()
 	:m_bInitialised(false)
 {
 }
 
-ScoreDisplay::~ScoreDisplay()
+LifeDisplay::~LifeDisplay()
 {
 }
 
-void ScoreDisplay::Initialise(Vector2& position)
+void LifeDisplay::Initialise(Vector2& position)
 {
-	AnimatedSprite::Initialise(&ScoreDigitSprite[0][0], Vector3(DIGIT_WIDTH, DIGIT_HEIGHT, NUM_DIGITS));
+	AnimatedSprite::Initialise(&LifeDigitSprite[0][0], Vector3(8, 10, 10));
 
-	Vector2 startPosition(position.x - (AnimatedSprite::GetSize().x - 215), position.y - (AnimatedSprite::GetSize().y / 2));
+	Vector2 startPosition(position.x - (AnimatedSprite::GetSize().x / 2), position.y - (AnimatedSprite::GetSize().y / 2));
 	SetPosition(startPosition);
 
-	SetAnimationFrame(0);
+	SetAnimationFrame(3);
 
 	m_bInitialised = true;
 }
 
-void ScoreDisplay::Update(float deltaTime)
+void LifeDisplay::Update(float deltaTime)
 {
 	if (!m_bInitialised)
-		return;	
+		return;
 }
 
-void ScoreDisplay::SetDigitValue(int value)
-{
-	if (value >= 0 && value < NUM_DIGITS)
+void LifeDisplay::SetLifeValue(int m_PlayerLives)
+{	
+
+	if (m_PlayerLives >= 0 && m_PlayerLives < 3)
 	{
-		SetAnimationFrame(value);
+		SetAnimationFrame(m_PlayerLives);
 	}
 	else
 	{
-		SetAnimationFrame(0);
+		SetAnimationFrame(3);
 	}
 }
 
-void ScoreDisplay::Render(ASCIIRenderer* pRenderer)
+void LifeDisplay::Render(ASCIIRenderer* pRenderer)
 {
 	if (!m_bInitialised)
 		return;

@@ -6,8 +6,8 @@
 class ASCIIRenderer;
 class Game;
 
-const int NUM_INVADERS_PER_ROW = 2;
-const int NUM_ROWS_OF_INVADERS = 4;
+const int NUM_INVADERS_PER_ROW = 1;
+const int NUM_ROWS_OF_INVADERS = 5;
 const int TOP_OF_PLAY_SCREEN = 15;
 
 class EnemyArmy
@@ -37,6 +37,7 @@ private:
 
 	float m_UpdateTimer;
 
+	
 	Game* m_pGame;
 
 	int m_ScoreEarned;

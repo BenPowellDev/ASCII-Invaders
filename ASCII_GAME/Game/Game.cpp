@@ -21,6 +21,7 @@ const int SCREEN_HEIGHT = 96;
 char* GameTitleSprite = "                                                                                                                                                                            dddddddd                                                                        AAA                 SSSSSSSSSSSSSSS         CCCCCCCCCCCCCIIIIIIIIIIIIIIIIIIII     IIIIIIIIII                                                                 d::::::d                                                                       A:::A              SS:::::::::::::::S     CCC::::::::::::CI::::::::II::::::::I     I::::::::I                                                                 d::::::d                                                                      A:::::A            S:::::SSSSSS::::::S   CC:::::::::::::::CI::::::::II::::::::I     I::::::::I                                                                 d::::::d                                                                     A:::::::A           S:::::S     SSSSSSS  C:::::CCCCCCCC::::CII::::::IIII::::::II     II::::::II                                                                 d:::::d                                                                     A:::::::::A          S:::::S             C:::::C       CCCCCC  I::::I    I::::I         I::::Innnn  nnnnnnnn vvvvvvv           vvvvvvvaaaaaaaaaaaaa      ddddddddd:::::d     eeeeeeeeeeee    rrrrr   rrrrrrrrr       ssssssssss             A:::::A:::::A         S:::::S            C:::::C                I::::I    I::::I         I::::In:::nn::::::::nnv:::::v         v:::::v a::::::::::::a   dd::::::::::::::d   ee::::::::::::ee  r::::rrr:::::::::r    ss::::::::::s           A:::::A A:::::A         S::::SSSS         C:::::C                I::::I    I::::I         I::::In::::::::::::::nnv:::::v       v:::::v  aaaaaaaaa:::::a d::::::::::::::::d  e::::::eeeee:::::eer:::::::::::::::::r ss:::::::::::::s         A:::::A   A:::::A         SS::::::SSSSS    C:::::C                I::::I    I::::I         I::::Inn:::::::::::::::nv:::::v     v:::::v            a::::ad:::::::ddddd:::::d e::::::e     e:::::err::::::rrrrr::::::rs::::::ssss:::::s       A:::::A     A:::::A          SSS::::::::SS  C:::::C                I::::I    I::::I         I::::I  n:::::nnnn:::::n v:::::v   v:::::v      aaaaaaa:::::ad::::::d    d:::::d e:::::::eeeee::::::e r:::::r     r:::::r s:::::s  ssssss       A:::::AAAAAAAAA:::::A            SSSSSS::::S C:::::C                I::::I    I::::I         I::::I  n::::n    n::::n  v:::::v v:::::v     aa::::::::::::ad:::::d     d:::::d e:::::::::::::::::e  r:::::r     rrrrrrr   s::::::s           A:::::::::::::::::::::A                S:::::SC:::::C                I::::I    I::::I         I::::I  n::::n    n::::n   v:::::v:::::v     a::::aaaa::::::ad:::::d     d:::::d e::::::eeeeeeeeeee   r:::::r                  s::::::s       A:::::AAAAAAAAAAAAA:::::A               S:::::S C:::::C       CCCCCC  I::::I    I::::I         I::::I  n::::n    n::::n    v:::::::::v     a::::a    a:::::ad:::::d     d:::::d e:::::::e            r:::::r            ssssss   s:::::s    A:::::A             A:::::A  SSSSSSS     S:::::S  C:::::CCCCCCCC::::CII::::::IIII::::::II     II::::::IIn::::n    n::::n     v:::::::v      a::::a    a:::::ad::::::ddddd::::::dde::::::::e           r:::::r            s:::::ssss::::::s  A:::::A               A:::::A S::::::SSSSSS:::::S   CC:::::::::::::::CI::::::::II::::::::I     I::::::::In::::n    n::::n      v:::::v       a:::::aaaa::::::a d:::::::::::::::::d e::::::::eeeeeeee   r:::::r            s::::::::::::::s  A:::::A                 A:::::AS:::::::::::::::SS      CCC::::::::::::CI::::::::II::::::::I     I::::::::In::::n    n::::n       v:::v         a::::::::::aa:::a d:::::::::ddd::::d  ee:::::::::::::e   r:::::r             s:::::::::::ss  AAAAAAA                   AAAAAAASSSSSSSSSSSSSSS           CCCCCCCCCCCCCIIIIIIIIIIIIIIIIIIII     IIIIIIIIIInnnnnn    nnnnnn        vvv           aaaaaaaaaa  aaaa  ddddddddd   ddddd    eeeeeeeeeeeeee   rrrrrrr              sssssssssss    ";
 char* GameOverSprite = "        GGGGGGGGGGGGG               AAA               MMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE          OOOOOOOOO     VVVVVVVV           VVVVVVVVEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRR        GGG::::::::::::G              A:::A              M:::::::M             M:::::::ME::::::::::::::::::::E        OO:::::::::OO   V::::::V           V::::::VE::::::::::::::::::::ER::::::::::::::::R     GG:::::::::::::::G             A:::::A             M::::::::M           M::::::::ME::::::::::::::::::::E      OO:::::::::::::OO V::::::V           V::::::VE::::::::::::::::::::ER::::::RRRRRR:::::R   G:::::GGGGGGGG::::G            A:::::::A            M:::::::::M         M:::::::::MEE::::::EEEEEEEEE::::E     O:::::::OOO:::::::OV::::::V           V::::::VEE::::::EEEEEEEEE::::ERR:::::R     R:::::R G:::::G       GGGGGG           A:::::::::A           M::::::::::M       M::::::::::M  E:::::E       EEEEEE     O::::::O   O::::::O V:::::V           V:::::V   E:::::E       EEEEEE  R::::R     R:::::RG:::::G                        A:::::A:::::A          M:::::::::::M     M:::::::::::M  E:::::E                  O:::::O     O:::::O  V:::::V         V:::::V    E:::::E               R::::R     R:::::RG:::::G                       A:::::A A:::::A         M:::::::M::::M   M::::M:::::::M  E::::::EEEEEEEEEE        O:::::O     O:::::O   V:::::V       V:::::V     E::::::EEEEEEEEEE     R::::RRRRRR:::::R G:::::G    GGGGGGGGGG        A:::::A   A:::::A        M::::::M M::::M M::::M M::::::M  E:::::::::::::::E        O:::::O     O:::::O    V:::::V     V:::::V      E:::::::::::::::E     R:::::::::::::RR  G:::::G    G::::::::G       A:::::A     A:::::A       M::::::M  M::::M::::M  M::::::M  E:::::::::::::::E        O:::::O     O:::::O     V:::::V   V:::::V       E:::::::::::::::E     R::::RRRRRR:::::R G:::::G    GGGGG::::G      A:::::AAAAAAAAA:::::A      M::::::M   M:::::::M   M::::::M  E::::::EEEEEEEEEE        O:::::O     O:::::O      V:::::V V:::::V        E::::::EEEEEEEEEE     R::::R     R:::::RG:::::G        G::::G     A:::::::::::::::::::::A     M::::::M    M:::::M    M::::::M  E:::::E                  O:::::O     O:::::O       V:::::V:::::V         E:::::E               R::::R     R:::::R G:::::G       G::::G    A:::::AAAAAAAAAAAAA:::::A    M::::::M     MMMMM     M::::::M  E:::::E       EEEEEE     O::::::O   O::::::O        V:::::::::V          E:::::E       EEEEEE  R::::R     R:::::R  G:::::GGGGGGGG::::G   A:::::A             A:::::A   M::::::M               M::::::MEE::::::EEEEEEEE:::::E     O:::::::OOO:::::::O         V:::::::V         EE::::::EEEEEEEE:::::ERR:::::R     R:::::R   GG:::::::::::::::G  A:::::A               A:::::A  M::::::M               M::::::ME::::::::::::::::::::E      OO:::::::::::::OO           V:::::V          E::::::::::::::::::::ER::::::R     R:::::R     GGG::::::GGG:::G A:::::A                 A:::::A M::::::M               M::::::ME::::::::::::::::::::E        OO:::::::::OO              V:::V           E::::::::::::::::::::ER::::::R     R:::::R        GGGGGG   GGGGAAAAAAA                   AAAAAAAMMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE          OOOOOOOOO                 VVV            EEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR";
 char* YouWinSprite = "YYYYYYY       YYYYYYY     OOOOOOOOO     UUUUUUUU     UUUUUUUU     WWWWWWWW                           WWWWWWWWIIIIIIIIIINNNNNNNN        NNNNNNNNY:::::Y       Y:::::Y   OO:::::::::OO   U::::::U     U::::::U     W::::::W                           W::::::WI::::::::IN:::::::N       N::::::NY:::::Y       Y:::::Y OO:::::::::::::OO U::::::U     U::::::U     W::::::W                           W::::::WI::::::::IN::::::::N      N::::::NY::::::Y     Y::::::YO:::::::OOO:::::::OUU:::::U     U:::::UU     W::::::W                           W::::::WII::::::IIN:::::::::N     N::::::NYYY:::::Y   Y:::::YYYO::::::O   O::::::O U:::::U     U:::::U       W:::::W           WWWWW           W:::::W   I::::I  N::::::::::N    N::::::N   Y:::::Y Y:::::Y   O:::::O     O:::::O U:::::D     D:::::U        W:::::W         W:::::W         W:::::W    I::::I  N:::::::::::N   N::::::N    Y:::::Y:::::Y    O:::::O     O:::::O U:::::D     D:::::U         W:::::W       W:::::::W       W:::::W     I::::I  N:::::::N::::N  N::::::N     Y:::::::::Y     O:::::O     O:::::O U:::::D     D:::::U          W:::::W     W:::::::::W     W:::::W      I::::I  N::::::N N::::N N::::::N      Y:::::::Y      O:::::O     O:::::O U:::::D     D:::::U           W:::::W   W:::::W:::::W   W:::::W       I::::I  N::::::N  N::::N:::::::N       Y:::::Y       O:::::O     O:::::O U:::::D     D:::::U            W:::::W W:::::W W:::::W W:::::W        I::::I  N::::::N   N:::::::::::N       Y:::::Y       O:::::O     O:::::O U:::::D     D:::::U             W:::::W:::::W   W:::::W:::::W         I::::I  N::::::N    N::::::::::N       Y:::::Y       O::::::O   O::::::O U::::::U   U::::::U              W:::::::::W     W:::::::::W          I::::I  N::::::N     N:::::::::N       Y:::::Y       O:::::::OOO:::::::O U:::::::UUU:::::::U               W:::::::W       W:::::::W         II::::::IIN::::::N      N::::::::N    YYYY:::::YYYY     OO:::::::::::::OO   UU:::::::::::::UU                 W:::::W         W:::::W          I::::::::IN::::::N       N:::::::N    Y:::::::::::Y       OO:::::::::OO       UU:::::::::UU                    W:::W           W:::W           I::::::::IN::::::N        N::::::N    YYYYYYYYYYYYY         OOOOOOOOO           UUUUUUUUU                       WWW             WWW            IIIIIIIIIINNNNNNNN         NNNNNNN";
+char* NextRoundSprite = "##    ## ######## ##     ## ########    ########   #######  ##     ## ##    ## ######## ###   ## ##        ##   ##     ##       ##     ## ##     ## ##     ## ###   ## ##     ######  ## ##         ## ##      ##       ##     ## ##     ## ##     ## ####  ## ##     #### ## ## ######      ###       ##       ########  ##     ## ##     ## ## ## ## ##     ####  #### ##         ## ##      ##       ##   ##   ##     ## ##     ## ##  #### ##     ####   ### ##        ##   ##     ##       ##    ##  ##     ## ##     ## ##   ### ##     ####    ## ######## ##     ##    ##       ##     ##  #######   #######  ##    ## ######## ";
 
 Game::Game()
 :m_pRenderer(NULL)
@@ -30,6 +31,7 @@ Game::Game()
 , m_Score(0)
 , m_MainMenuCounter(0)
 , m_EndScreenCounter(0)
+, m_PlayerLives(3)
 {
 }
 
@@ -144,7 +146,6 @@ void Game::InitialiseMainMenu()
 				}
 			}
 		}
-
 		Sleep(150);
 	}
 }
@@ -165,6 +166,10 @@ void Game::InitialiseGame()
 		m_ScoreDigit[i].Initialise(Vector2(7 + (i * 10), 7));
 	}
 
+	for (int i = 0; i < 1; i++)
+	{
+		m_LifeDigit[i].Initialise(Vector2(7 + (i * 10), 7));
+	}
 
 }
 
@@ -177,6 +182,11 @@ void Game::InitialiseEndScreens()
 	Vector2 gameOverPosition(25, 37);
 	m_GameOverTitle.SetPosition(gameOverPosition);
 
+	Vector2 nextRoundTitleSize(88, 7);
+	m_NextRoundTitle.Initialise(NextRoundSprite, FOREGROUND_WHITE, nextRoundTitleSize);
+
+	Vector2 nextRoundPosition(85, 45);
+	m_NextRoundTitle.SetPosition(nextRoundPosition);
 
 	Vector2 youWinTitleSize(143, 16);
 	m_YouWinTitle.Initialise(YouWinSprite, FOREGROUND_WHITE, youWinTitleSize);
@@ -219,10 +229,17 @@ void Game::Update()
 		}
 		break;
 
-		case E_GAME_STATE_WIN_GAME: //fall through
+		case E_GAME_STATE_WIN_GAME:
+
 		case E_GAME_STATE_LOSE_GAME:
 		{
 			UpdateEndGameScreens();
+		}
+		break;
+
+		case E_GAME_STATE_NEXT_ROUND:
+		{
+			UpdateNextRound();
 		}
 		break;
 
@@ -255,11 +272,13 @@ void Game::UpdateGame()
 
 	UpdateScoreDisplay();
 
+	UpdateLifeDisplay();
+
 	CheckWinConditions();
 
 	if (m_EnemyArmy.Collides(m_PlayerShip))
 	{
-		(m_Lives - 1);
+		(m_PlayerLives - 1);
 	}
 
 	if (GetKeyState(VK_SPACE) < 0)
@@ -302,12 +321,13 @@ void Game::UpdateEnemyMissiles()
 		m_EnemyMissiles[i]->Update();
 	}
 
+
 	for (int i = 0; i < m_EnemyMissiles.size(); i++)
 	{
 		if (m_EnemyMissiles[i]->Active() && m_EnemyMissiles[i]->Collides(m_PlayerShip))
 		{
 			m_EnemyMissiles[i]->Explode();
-			(m_Lives - 1);
+			m_PlayerLives - 1;
 		}
 		if (m_EnemyMissiles[i]->Active() && m_EnemyMissiles[i]->GetPosition().y > SCREEN_WIDTH)
 		{
@@ -320,14 +340,25 @@ void Game::CheckWinConditions()
 {
 	if (m_EnemyArmy.GetNumActiveEnemies() <= 0)
 	{
-		m_GameState = E_GAME_STATE_WIN_GAME;
+		m_GameState = E_GAME_STATE_NEXT_ROUND;
 	}
-/*
-	if (m_Lives == 0)
+
+	if (m_PlayerLives == 0)
 	{
 		m_GameState = E_GAME_STATE_LOSE_GAME;
 	}
-//*/
+
+}
+
+void Game::UpdateNextRound()
+{
+	m_NextRoundCounter++;
+
+	if (m_NextRoundCounter > 90)
+	{
+		m_NextRoundCounter = 0;
+	}
+	
 }
 
 void Game::UpdateEndGameScreens()
@@ -338,6 +369,7 @@ void Game::UpdateEndGameScreens()
 	{
 		m_EndScreenCounter = 0;
 	}
+
 }
 
 void Game::Render()
@@ -355,6 +387,12 @@ void Game::Render()
 		case E_GAME_STATE_IN_GAME:
 		{
 			RenderGame();
+		}
+		break;
+
+		case E_GAME_STATE_NEXT_ROUND:
+		{
+			RenderNextRoundScreen();
 		}
 		break;
 
@@ -392,6 +430,7 @@ void Game::RenderGame()
 	RenderEnemyMissiles();
 
 	RenderScore();
+	RenderLives();
 }
 
 void Game::RenderEnemyMissiles()
@@ -410,6 +449,14 @@ void Game::RenderScore()
 	}
 }
 
+void Game::RenderLives()
+{
+	for (int i = 0; i < 2; i++)
+	{
+		m_LifeDigit[i].Render(m_pRenderer);
+	}
+}
+
 void Game::RenderWinScreen()
 {
 	m_YouWinTitle.Render(m_pRenderer);
@@ -418,6 +465,11 @@ void Game::RenderWinScreen()
 void Game::RenderLoseScreen()
 {
 	m_GameOverTitle.Render(m_pRenderer);
+}
+
+void Game::RenderNextRoundScreen()
+{
+	m_NextRoundTitle.Render(m_pRenderer);
 }
 
 void Game::AddEnemyMissile(Missile* pMissile)
@@ -444,4 +496,14 @@ void Game::UpdateScoreDisplay()
 	m_ScoreDigit[1].SetDigitValue(ScoreValues[1]);
 	m_ScoreDigit[2].SetDigitValue(ScoreValues[2]);
 	m_ScoreDigit[3].SetDigitValue(ScoreValues[3]);
+}
+
+void Game::UpdateLifeDisplay()
+{
+	for (int i = 0; i < 1; i++)
+	{
+		m_LifeDigit[i].Update(0.0f);
+	}
+
+	m_LifeDigit[1].SetLifeValue(m_PlayerLives);
 }

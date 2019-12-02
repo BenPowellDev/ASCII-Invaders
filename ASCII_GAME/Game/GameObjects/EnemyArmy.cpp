@@ -1,10 +1,21 @@
 #include "EnemyArmy.h"
 #include "../Game.h"
+#include <random>
 
 float deltaTime = 1.0f / 30.0f;
 
 const int ENEMY_SPACING_X = 10;
 const int ENEMY_SPACING_Y = 12;
+
+int RandomArmy(int low, int high)
+{
+	std::random_device dev;
+	std::mt19937 rng(dev());
+	std::uniform_int_distribution<std::mt19937::result_type> Distribution(low,high);
+
+	return Distribution(rng);
+}
+
 
 EnemyArmy::EnemyArmy()
 :m_UpdateTimer(0.0f)
@@ -22,7 +33,7 @@ EnemyArmy::~EnemyArmy()
 void EnemyArmy::Initialise(Game* pGame)
 {
 	m_pGame = pGame;
-	deltaTime = 1.0f / 10.0f;
+	deltaTime = 1.5f / 10.0f;
 
 	m_MovingRight = true;
 
@@ -30,15 +41,13 @@ void EnemyArmy::Initialise(Game* pGame)
 	{
 		for (int j = 0; j < NUM_INVADERS_PER_ROW; j++)
 		{
-			//m_EnemyShip[i][j].Initialise(Vector2(4 + j * 7, 2 + i * 4), 5/*, (i+1.0f) * 0.3f*/ );
-			m_EnemyShip[i][j].Initialise(Vector2(ENEMY_SPACING_X + j * (12 + ENEMY_SPACING_X), TOP_OF_PLAY_SCREEN + ENEMY_SPACING_Y + i * (2 + ENEMY_SPACING_Y) ), 5, i, (NUM_ROWS_OF_INVADERS - i) * 200);
+			m_EnemyShip[i][j].Initialise(Vector2(SCREEN_WIDTH + RandomArmy(1, 150), RandomArmy(5, (SCREEN_HEIGHT - m_EnemyShip[i][j].GetSize().y - 5))), 5, i, 200);
 		}
 	}
 }
 
 void EnemyArmy::Update()
 {
-	//update enemy movement
 	m_UpdateTimer += deltaTime;
 
 	if (m_UpdateTimer >= 1.0f)
@@ -57,7 +66,7 @@ void EnemyArmy::Update()
 			{
 				for (int j = 0; j < NUM_INVADERS_PER_ROW; j++)
 				{
-					m_EnemyShip[i][j].MoveDown();
+					m_EnemyShip[i][j].MoveLeft();
 				}
 			}
 		}
@@ -81,7 +90,7 @@ void EnemyArmy::Update()
 		{
 			if (m_EnemyShip[i][j].Update(deltaTime))
 			{
-				Missile* pMissile = new Missile();
+				Missile* pMissile = new Missile;
 				pMissile->Initialise(Vector2(m_EnemyShip[i][j].GetPosition().x - 2, m_EnemyShip[i][j].GetPosition().y + (m_EnemyShip[i][j].GetSize().y * 0.5f)), Vector2(-MISSILE_SPEED, 0));
 				m_pGame->AddEnemyMissile(pMissile);
 			}

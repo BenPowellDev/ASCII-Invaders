@@ -7,6 +7,7 @@
 #include "GameObjects\Missile.h"
 #include "../Core/Renderer/Sprite.h"
 #include "GameObjects\ScoreDisplay.h"
+#include "GameObjects\LifeDisplay.h"
 #include <vector>
 
 class ASCIIRenderer;
@@ -29,6 +30,8 @@ private:
 	void Update();
 	void Render();
 	void UpdateScoreDisplay();
+	void UpdateLifeDisplay();
+
 
 	void InitialiseMainMenu();
 	void InitialiseGame();
@@ -46,13 +49,17 @@ private:
 
 	void UpdateEndGameScreens();
 
+	void UpdateNextRound();
+
 	void RenderMainMenu();
 	void RenderGame();
 	void RenderWinScreen();
 	void RenderLoseScreen();
+	void RenderNextRoundScreen();
 
 	void RenderEnemyMissiles();
 	void RenderScore();
+	void RenderLives();
 
 	ASCIIRenderer* m_pRenderer;
 
@@ -62,7 +69,7 @@ private:
 	bool m_bExitApp;
 
 	int m_Score;
-	int m_Lives;
+	int m_PlayerLives = 3;
 	
 
 	PlayerShip m_PlayerShip;
@@ -73,10 +80,14 @@ private:
 	std::vector<Missile*> m_EnemyMissiles;
 
 	ScoreDisplay m_ScoreDigit[4];
+	LifeDisplay m_LifeDigit[1];
 
 
 	Sprite m_GameTitle;
 	int m_MainMenuCounter;
+
+	Sprite m_NextRoundTitle;
+	int m_NextRoundCounter;
 
 	Sprite m_GameOverTitle;
 	int m_EndScreenCounter;

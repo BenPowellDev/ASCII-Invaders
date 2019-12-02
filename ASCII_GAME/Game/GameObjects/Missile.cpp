@@ -11,9 +11,9 @@ CHAR_INFO MissileSprite[] =
 
 CHAR_INFO EnemyMissileSprite[] =
 {
-	{ ' ', BACKGROUND_GREEN },
-	{ ' ', BACKGROUND_GREEN },
-	{ ' ', BACKGROUND_GREEN },
+	{ ' ', BACKGROUND_PURPLE },
+	{ ' ', BACKGROUND_PURPLE },
+	{ ' ', BACKGROUND_PURPLE },
 };
 
 Missile::Missile()
